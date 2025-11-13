@@ -7,7 +7,7 @@
     <title>Litheeshkumar G - Cloud & DevOps Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
@@ -21,14 +21,13 @@
             --lavender: #E0D4FF;
             --sky: #4FC3F7;
             --navy: #1A237E;
+            --black: #111;
             --white: #ffffff;
-            --text: #111;
-            --black: #000;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text);
+            color: var(--black);
             background: var(--white);
             overflow-x: hidden;
         }
@@ -40,20 +39,20 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.02;
-            background: repeating-linear-gradient(45deg, transparent, transparent 100px, var(--lavender) 100px, var(--lavender) 101px);
+            opacity: 0.015;
+            background: repeating-linear-gradient(45deg, transparent, transparent 120px, var(--lavender) 120px, var(--lavender) 121px);
         }
 
         section {
-            padding: 120px 100px;
+            padding: 140px 100px;
             opacity: 0;
-            transform: translateY(50px) scale(0.98);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(60px);
+            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         section.visible {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateY(0);
         }
 
         .container {
@@ -72,45 +71,39 @@
         .hero-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 100px;
+            align-items: center;
+            margin-bottom: 120px;
         }
 
         .hero-name {
             font-family: 'Playfair Display', serif;
-            font-size: 90px;
-            font-weight: 900;
-            color: var(--text);
-            line-height: 1;
-            letter-spacing: -2px;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--lavender);
+            cursor: pointer;
+            transition: color 0.4s ease;
+            user-select: none;
         }
 
         .hero-role {
-            font-size: 28px;
-            font-weight: 300;
-            color: var(--navy);
-            text-align: right;
-            line-height: 1.3;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--lavender);
         }
 
         .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 180px;
-            gap: 120px;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-
-        .hero-text {
-            max-width: 800px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .typing-subtitle {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 600;
-            line-height: 1.3;
-            color: var(--text);
-            min-height: 180px;
+            line-height: 1.4;
+            color: var(--black);
+            min-height: 200px;
+            margin-bottom: 70px;
         }
 
         .typing-subtitle .highlight {
@@ -130,37 +123,17 @@
             border-radius: 2px;
         }
 
-        .hero-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 40px rgba(224, 212, 255, 0.6);
-            animation: breathe 4s ease-in-out infinite;
-        }
-
-        @keyframes breathe {
-            0%, 100% { 
-                transform: scale(1);
-                box-shadow: 0 0 40px rgba(224, 212, 255, 0.6);
-            }
-            50% { 
-                transform: scale(1.05);
-                box-shadow: 0 0 60px rgba(224, 212, 255, 0.8);
-            }
-        }
-
         .hero-buttons {
             display: flex;
             gap: 30px;
-            margin-top: 60px;
+            justify-content: center;
         }
 
         .btn {
-            padding: 22px 55px;
+            padding: 20px 50px;
             font-size: 17px;
             font-weight: 600;
-            border-radius: 14px;
+            border-radius: 50px;
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
@@ -169,7 +142,7 @@
 
         .btn-primary {
             background: var(--lavender);
-            color: var(--text);
+            color: var(--black);
             border: none;
             animation: pulse 3s ease-in-out infinite;
         }
@@ -206,7 +179,7 @@
             font-size: 64px;
             font-weight: 900;
             margin-bottom: 100px;
-            color: var(--text);
+            color: var(--black);
             position: relative;
             display: inline-block;
         }
@@ -227,17 +200,56 @@
             width: 100%;
         }
 
-        .about-text {
-            max-width: 900px;
-            font-size: 28px;
-            line-height: 1.6;
-            font-weight: 300;
-            color: var(--text);
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .about-text .accent {
-            color: var(--navy);
+        .about-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 50px rgba(224, 212, 255, 0.5);
+            animation: breathe 4s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes breathe {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 50px rgba(224, 212, 255, 0.5);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 70px rgba(224, 212, 255, 0.7);
+            }
+        }
+
+        .about-text {
+            font-size: 26px;
+            line-height: 1.7;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-text .lavender {
+            color: var(--lavender);
             font-weight: 600;
+        }
+
+        .about-text .black {
+            color: var(--black);
+            font-weight: 400;
+        }
+
+        .about-text .bold {
+            font-weight: 700;
         }
 
         .projects-grid {
@@ -271,7 +283,7 @@
         .project-card p {
             font-size: 17px;
             line-height: 1.8;
-            color: var(--text);
+            color: var(--black);
             margin-bottom: 30px;
             font-weight: 300;
         }
@@ -363,150 +375,37 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            gap: 50px;
-            text-align: center;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
         }
 
-        .skill-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, var(--lavender), rgba(79, 195, 247, 0.3));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            color: var(--navy);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            animation: skillFloat 4s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(224, 212, 255, 0.4);
-        }
-
-        .skill-icon:nth-child(even) {
-            animation-delay: 0.5s;
-        }
-
-        @keyframes skillFloat {
-            0%, 100% { 
-                transform: translateY(0) rotate(0deg);
-            }
-            50% { 
-                transform: translateY(-15px) rotate(5deg);
-            }
-        }
-
-        .skill-icon:hover {
-            transform: translateY(-20px) rotate(15deg) scale(1.15);
-            box-shadow: 0 25px 60px rgba(79, 195, 247, 0.6);
-            background: linear-gradient(135deg, var(--sky), var(--lavender));
-        }
-
-        .skill-icon .tooltip {
-            position: absolute;
-            bottom: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--navy);
-            color: var(--white);
-            padding: 10px 18px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .skill-icon:hover .tooltip {
-            opacity: 1;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
-        }
-
-        .cert-card {
+        .skill-card {
             background: var(--white);
+            border: 2px solid var(--lavender);
             border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s;
+            padding: 50px 30px;
             text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
         }
 
-        .cert-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(224, 212, 255, 0.4);
-            background: linear-gradient(135deg, rgba(224, 212, 255, 0.2), rgba(79, 195, 247, 0.1));
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(224, 212, 255, 0.5);
+            border-color: var(--sky);
         }
 
-        .cert-card i {
+        .skill-card i {
             font-size: 60px;
             color: var(--navy);
             margin-bottom: 25px;
+            display: block;
         }
 
-        .cert-card h3 {
-            font-size: 24px;
-            color: var(--navy);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .cert-card p {
-            font-size: 16px;
-            color: var(--text);
-            font-weight: 300;
-        }
-
-        .interest-tags {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .interest-tag {
-            background: var(--lavender);
-            padding: 30px 50px;
-            border-radius: 20px;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--navy);
-            box-shadow: 0 10px 40px rgba(224, 212, 255, 0.4);
-            animation: tagPulse 3s ease-in-out infinite;
-            transition: all 0.3s;
-        }
-
-        .interest-tag:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .interest-tag:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        @keyframes tagPulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 10px 40px rgba(224, 212, 255, 0.4);
-            }
-            50% {
-                transform: scale(1.08);
-                box-shadow: 0 15px 50px rgba(79, 195, 247, 0.5);
-            }
-        }
-
-        .interest-tag:hover {
-            transform: scale(1.12);
-            background: var(--sky);
-            color: var(--white);
+        .skill-card p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
         }
 
         footer {
@@ -518,60 +417,80 @@
 
         footer h2 {
             color: var(--white);
-            margin-bottom: 60px;
+            margin-bottom: 20px;
         }
 
         footer h2::after {
-            background: #FFD700;
+            background: var(--lavender);
+        }
+
+        .footer-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 50px;
+            font-weight: 300;
         }
 
         .footer-icons {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 50px;
         }
 
         .footer-icons a {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background: #FFD700;
-            color: var(--black);
-            font-size: 28px;
+            font-size: 20px;
             text-decoration: none;
             transition: all 0.4s;
         }
 
+        .footer-icons a.email {
+            background: var(--lavender);
+            color: var(--black);
+        }
+
+        .footer-icons a.linkedin {
+            background: var(--sky);
+            color: var(--white);
+        }
+
+        .footer-icons a.github {
+            background: var(--navy);
+            color: var(--white);
+        }
+
         .footer-icons a:hover {
-            transform: scale(1.25) rotate(10deg);
-            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
+            transform: scale(1.25) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
 
         .footer-text {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.4);
             font-weight: 300;
         }
 
         @media (max-width: 1200px) {
             section {
-                padding: 80px 60px;
-            }
-
-            .hero-name {
-                font-size: 70px;
+                padding: 100px 60px;
             }
 
             .typing-subtitle {
-                font-size: 38px;
+                font-size: 42px;
             }
 
             .skills-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-content {
+                gap: 60px;
             }
         }
 
@@ -581,30 +500,22 @@
             }
 
             .hero-name {
-                font-size: 48px;
+                font-size: 28px;
             }
 
             .hero-role {
-                font-size: 20px;
+                font-size: 16px;
             }
 
             .hero-header {
                 flex-direction: column;
-                gap: 30px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                text-align: center;
-            }
-
-            .hero-photo {
-                margin: 0 auto;
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 80px;
             }
 
             .typing-subtitle {
-                font-size: 28px;
+                font-size: 32px;
             }
 
             .hero-buttons {
@@ -615,16 +526,22 @@
                 font-size: 42px;
             }
 
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .about-text {
+                font-size: 22px;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
             }
 
             footer {
@@ -657,24 +574,18 @@
     <section class="hero visible">
         <div class="container">
             <div class="hero-header">
-                <h1 class="hero-name">Litheeshkumar G</h1>
-                <div class="hero-role">Cloud & DevOps<br>Engineer</div>
+                <h1 class="hero-name" id="heroName">Litheeshkumar G</h1>
+                <div class="hero-role">Cloud & DevOps</div>
             </div>
 
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="typing-subtitle">
-                        I build <span class="highlight">scalable cloud systems</span> with <span class="highlight">AWS</span>, <span class="highlight">Docker</span> & <span class="highlight">Prometheus</span>
-                    </div>
-
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#footer" class="btn btn-secondary">Get In Touch</a>
-                    </div>
+                <div class="typing-subtitle">
+                    I build <span class="highlight">scalable cloud systems</span> with <span class="highlight">AWS</span>, <span class="highlight">Docker</span> & <span class="highlight">Prometheus</span>
                 </div>
 
-                <div>
-                    <img src="https://i.ibb.co/0jG6Z3K/litheeshkumar-photo.jpg" alt="Litheeshkumar G" class="hero-photo">
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#footer" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
         </div>
@@ -683,10 +594,23 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p class="about-text">
-                <span class="accent">Fresh DevOps Engineer</span> passionate about cloud-native infrastructure. 
-                Currently automating everything at <span class="accent">Sense 7AI</span>. 🚀
-            </p>
+            <div class="about-content">
+                <img src="https://i.ibb.co/0jG6Z3K/litheeshkumar-photo.jpg" alt="Litheeshkumar G" class="about-photo">
+                <div class="about-text">
+                    <p>
+                        <span class="lavender bold">Fresh DevOps Engineer</span> 
+                        <span class="black">passionate about</span> 
+                        <span class="lavender">cloud-native infrastructure</span><span class="black">.</span>
+                    </p>
+                    <p>
+                        <span class="black">Currently</span> 
+                        <span class="lavender bold">automating everything</span> 
+                        <span class="black">at</span> 
+                        <span class="lavender bold">Sense 7AI</span><span class="black">.</span> 
+                        <span>🚀</span>
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -702,7 +626,7 @@
                         and automated CI/CD pipelines for seamless updates.
                     </p>
                     <div class="tech-tags">
-                        <span class="tech-tag">Facial Recognition</span>
+                        <span class="tech-tag">Facial Emotion</span>
                         <span class="tech-tag">Machine Learning</span>
                         <span class="tech-tag">GCP</span>
                         <span class="tech-tag">Docker</span>
@@ -716,7 +640,7 @@
                 <div class="project-card">
                     <h3>☁️ AWS CI/CD Pipeline</h3>
                     <p>
-                        Architected a fully automated CI/CD pipeline using AWS CodePipeline, Docker, and EC2. 
+                        Architected a fully automated CI/CD pipeline using AWS CodePipeline, Docker, EC2, and Streamlit. 
                         Implemented infrastructure as code with Terraform, achieving zero-downtime deployments 
                         and reducing release time by 70%.
                     </p>
@@ -724,8 +648,8 @@
                         <span class="tech-tag">AWS CodePipeline</span>
                         <span class="tech-tag">Docker</span>
                         <span class="tech-tag">EC2</span>
+                        <span class="tech-tag">Streamlit</span>
                         <span class="tech-tag">Terraform</span>
-                        <span class="tech-tag">CloudWatch</span>
                     </div>
                     <a href="https://github.com/21CSA32" class="project-link" target="_blank">
                         View on GitHub <i class="fas fa-arrow-right"></i>
@@ -739,13 +663,13 @@
         <div class="container">
             <h2>Experience</h2>
             <div class="experience-card">
-                <h3>DevOps Intern @ Sense 7AI</h3>
+                <h3>DevOps Intern @ Sense 7AI Data Solutions</h3>
                 <p class="date">June 2024 – Present</p>
                 <ul>
-                    <li>Containerized applications using Docker and deployed on GCP with 99.9% uptime</li>
-                    <li>Configured Nginx as reverse proxy and load balancer for high-traffic applications</li>
-                    <li>Automated workflows with Power Automate, reducing manual tasks by 50%</li>
-                    <li>Implemented monitoring and alerting with Prometheus and Grafana</li>
+                    <li>Dockerized applications and deployed on GCP with 99.9% uptime ⚙️</li>
+                    <li>Configured VPC networking on Google Cloud Platform for secure infrastructure 💻</li>
+                    <li>Set up Nginx as reverse proxy and load balancer for high-traffic applications</li>
+                    <li>Automated SharePoint workflows with Power Automate, reducing manual tasks by 50%</li>
                 </ul>
             </div>
         </div>
@@ -755,87 +679,38 @@
         <div class="container">
             <h2>Skills</h2>
             <div class="skills-grid">
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fab fa-aws"></i>
-                    <span class="tooltip">AWS</span>
+                    <p>AWS</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fab fa-docker"></i>
-                    <span class="tooltip">Docker</span>
+                    <p>Docker</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fas fa-dharmachakra"></i>
-                    <span class="tooltip">Kubernetes</span>
+                    <p>Kubernetes</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fas fa-code-branch"></i>
-                    <span class="tooltip">Terraform</span>
+                    <p>Terraform</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fas fa-chart-line"></i>
-                    <span class="tooltip">Prometheus</span>
+                    <p>Prometheus</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fas fa-chart-area"></i>
-                    <span class="tooltip">Grafana</span>
+                    <p>Grafana</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fab fa-linux"></i>
-                    <span class="tooltip">Linux</span>
+                    <p>Linux</p>
                 </div>
-                <div class="skill-icon">
+                <div class="skill-card">
                     <i class="fab fa-github"></i>
-                    <span class="tooltip">GitHub Actions</span>
+                    <p>GitHub Actions</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certificates">
-        <div class="container">
-            <h2>Certificates</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <i class="fab fa-google"></i>
-                    <h3>Google Cloud</h3>
-                    <p>Cloud Infrastructure</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fab fa-aws"></i>
-                    <h3>AWS VPC</h3>
-                    <p>Virtual Private Cloud</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fab fa-docker"></i>
-                    <h3>Docker</h3>
-                    <p>Containerization Expert</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fas fa-dharmachakra"></i>
-                    <h3>Kubernetes</h3>
-                    <p>Container Orchestration</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fas fa-code-branch"></i>
-                    <h3>CI/CD Pipeline</h3>
-                    <p>Jenkins & GitLab</p>
-                </div>
-                <div class="cert-card">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>Infrastructure as Code</h3>
-                    <p>Terraform & Ansible</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="interests">
-        <div class="container">
-            <h2>Area of Interest</h2>
-            <div class="interest-tags">
-                <div class="interest-tag">Cloud Computing in AWS ☁️</div>
-                <div class="interest-tag">DevOps ⚙️</div>
-                <div class="interest-tag">Linux System Administration 💻</div>
             </div>
         </div>
     </section>
@@ -843,18 +718,19 @@
     <footer id="footer">
         <div class="container">
             <h2>Let's Connect</h2>
+            <p class="footer-subtitle">Keep free to talk or interact</p>
             <div class="footer-icons">
-                <a href="mailto:litheeshkumar93@gmail.com" title="Email">
+                <a href="mailto:litheeshkumar93@gmail.com" class="email" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://linkedin.com/in/litheeshkumar-g-ab076824b" target="_blank" title="LinkedIn">
+                <a href="https://linkedin.com/in/litheeshkumar-g-ab076824b" target="_blank" class="linkedin" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/21CSA32" target="_blank" title="GitHub">
+                <a href="https://github.com/21CSA32" target="_blank" class="github" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
-            <p class="footer-text">© 2025 Litheeshkumar G — Built with passion & vanilla code</p>
+            <p class="footer-text">© 2025 Litheeshkumar G — Built with passion</p>
         </div>
     </footer>
 
@@ -909,6 +785,15 @@
             card.addEventListener('mouseleave', () => {
                 card.style.transform = '';
             });
+        });
+
+        const heroName = document.getElementById('heroName');
+        const colors = ['#E0D4FF', '#111', '#E0D4FF'];
+        let colorIndex = 0;
+
+        heroName.addEventListener('click', () => {
+            colorIndex = (colorIndex + 1) % colors.length;
+            heroName.style.color = colors[colorIndex];
         });
     </script>
 </body>

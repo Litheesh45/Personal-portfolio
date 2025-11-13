@@ -1,0 +1,73 @@
+Generate a stunning, ultra-minimal, single-page portfolio for Litheeshkumar G — DevOps Engineer from Coimbatore. Make it look exactly like portfolio.siddharth.ai but in PURE WHITE LIGHT THEME with massive whitespace, emotional design, and premium feel.
+
+MUST BE 100% SINGLE FILE (index.html) — no external files, no frameworks, pure HTML + CSS + vanilla JS.
+
+COLOR PALETTE:
+--lavender: #E0D4FF
+--sky: #4FC3F7
+--navy: #1A237E
+--black: #111
+--white: #ffffff
+
+HERO SECTION (exactly like Siddharth but cleaner):
+- Top-left: "Litheeshkumar G" in small elegant font (Playfair Display, 36px)
+  → CLICK NAME → color changes: lavender (#E0D4FF) → black → lavender (cycle on click)
+- Top-right: "Cloud & DevOps" in small Inter font (20px, lavender color)
+- NO photo, NO email/phone/location in hero
+- Center: Big typing animation: "I build scalable cloud systems with AWS, Docker & Prometheus"
+- Two animated buttons: "View My Work" (lavender pill) + "Get In Touch" (navy outline)
+
+SECTIONS (minimal, technical, animated):
+1. HERO (as above)
+2. ABOUT ME — 
+   - Circular photo: https://i.ibb.co/0jG6Z3K/litheeshkumar-photo.jpg (floating + subtle glow)
+   - Two lines: "Fresh DevOps Engineer passionate about cloud-native infrastructure." + "Currently automating everything at Sense 7AI."
+   - Text in Inter, some words in lavender, some black (mix font weights)
+
+3. PROJECTS — 2 stunning 3D tilt cards:
+   - "Mental Health AI Chatbot" (Facial Emotion + ML)
+   - "AWS CI/CD Pipeline" (CodePipeline + Docker + EC2 + Streamlit)
+   → Tech tags + GitHub buttons + 3D tilt + neon glow on hover
+
+4. EXPERIENCE — ONE elegant card:
+   - "DevOps Intern @ Sense 7AI Data Solutions | Jun 2025 – Present"
+   - 4 bullets: Dockerized apps, GCP VPC, Nginx reverse proxy, SharePoint automation
+
+5. SKILLS — 8 simple glowing cards (2 rows):
+   - AWS, Docker, Kubernetes, Terraform, Prometheus, Grafana, Linux, GitHub Actions
+   → Each card has ICON + NAME at bottom
+   → Simple scale + glow on hover (NO rotation, NO 3D)
+   → Background white, border lavender
+
+6. NO AREA OF INTEREST SECTION — REMOVE COMPLETELY
+
+FOOTER (black background, like second image):
+- "Let's Connect" in white
+- Below: "Keep free to talk or interact" in small Inter font (gray)
+- Three small icons: Email (lavender), LinkedIn (sky), GitHub (navy)
+  → Links: mailto:litheeshkumar93@gmail.com | linkedin.com/in/litheeshkumar-g | github.com/21CSA32
+- "© 2025 Litheeshkumar G — Built with passion"
+
+ANIMATIONS (clean & simple):
+- Smooth fade-in + slide-up on scroll
+- Name color cycle on click (lavender → black → lavender)
+- Photo floating breathe
+- Cards lift + glow on hover
+- Buttons pulse
+- Typing effect in hero
+- Subtle wave background (very light)
+- NO cursor, NO coffee, NO robot, NO Google Form
+
+FONTS:
+- Name & headings: Playfair Display
+- Body: Inter (mix light/regular/bold)
+- Load via Google Fonts
+
+MOBILE + LAPTOP PERFECT (fully responsive)
+PRINT-READY (Ctrl+P = clean PDF)
+
+Add small emojis: rocket, gear, laptop, brain
+
+This must NOT look like a resume. It must feel like a $15,000 agency site. Minimal text. Maximum visual impact. Recruiters must screenshot and share.
+
+Generate COMPLETE working code in ONE index.html file. Must run instantly on Replit with zero errors. Make it the most beautiful DevOps fresher portfolio ever created in 2025.
