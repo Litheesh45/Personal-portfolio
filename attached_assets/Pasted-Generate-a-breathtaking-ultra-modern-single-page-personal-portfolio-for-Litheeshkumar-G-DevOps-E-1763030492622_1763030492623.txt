@@ -1,0 +1,57 @@
+Generate a breathtaking, ultra-modern, single-page personal portfolio for Litheeshkumar G — DevOps Engineer from Coimbatore, India. Make it look EXACTLY like portfolio.siddharth.ai + adityagundecha.com but in a CLEAN LIGHT THEME with pure white background, massive whitespace, and premium spacing.
+
+MUST BE 100% SINGLE FILE (index.html) — no external files, no frameworks.
+
+COLOR PALETTE:
+--lavender: #E0D4FF
+--sky: #4FC3F7
+--navy: #1A237E
+--black text, white background
+
+HERO SECTION (like Siddharth):
+- Top-left: "Litheeshkumar G" in bold Playfair Display (80px+)
+- Top-right: "Cloud & DevOps Engineer" in elegant Inter font
+- Below: litheeshkumar93@gmail.com | 9080666141 | Coimbatore, India
+- Social icons: LinkedIn, GitHub (hover glow + scale)
+- Circular profile photo: https://i.ibb.co/0jG6Z3K/litheeshkumar-photo.jpg (floating animation, subtle shadow)
+- Center subtitle with typing animation: "I build scalable cloud systems with AWS, Docker & Prometheus"
+- Two huge animated buttons: "View My Work" (lavender fill, hover pulse) + "Get In Touch" (navy outline, hover fill)
+
+INTERACTIVE FEATURES (exactly like Siddharth):
+1. After 2 minutes inactivity → Full-screen overlay: "You've been scrolling a while... Grab a quick coffee" + animated coffee cup (click/tap to empty it!) + "Out of fuel.. Have a cup of coffee"
+2. After 4 minutes → "Are you still here?" with waving hand, robot, rocket, laptop emojis
+3. Floating robot in bottom-right that follows scroll + waves when hovered
+4. Custom cursor: glowing sky-blue dot that follows mouse
+5. Subtle wave background (very light, barely visible)
+
+SECTIONS (minimal content — NOT a resume dump):
+1. HERO (as above)
+2. ABOUT ME — short, emotional paragraph (150 words max) with lavender accent
+3. SELECTED PROJECTS — ONLY 2 cards (Mental Health AI + AWS CI/CD) with tech tags + GitHub buttons + hover 3D tilt
+4. SKILLS — 6 floating icons (AWS, Docker, K8s, Terraform, Prometheus, Linux) with tooltips + pulse animation
+5. EXPERIENCE — ONE elegant timeline card for "DevOps Intern @ Sense 7AI"
+6. CONTACT — Google Form embed + "Let's build something awesome" text
+
+ANIMATIONS EVERYWHERE:
+- Smooth fade-in + slide-up on scroll (AOS style but vanilla JS)
+- Cards lift + shadow on hover
+- Section titles with animated lavender underline
+- Parallax hero background
+- Micro-interactions on EVERY button/icon
+- Mobile-first responsive
+
+FONTS:
+- Headings: Playfair Display (bold)
+- Body: Inter (light & clean)
+- Load via Google Fonts
+
+FUN TOUCHES:
+- Emojis: rocket, brain, gear, laptop, robot, coffee
+- Floating robot follower
+- Coffee interaction
+- "Still here?" popup
+- Cursor glow
+
+NO RESUME CONTENT OVERLOAD. Keep it minimal, emotional, and recruiter-magnet. This must feel like a $5000 agency site.
+
+Generate COMPLETE working code in ONE index.html file. Must run instantly on Replit with zero errors. Make it the most beautiful DevOps fresher portfolio in India.
