@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litheeshkumar G - Cloud & DevOps Engineer</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E☁️%3C/text%3E%3C/svg%3E">
+    <!-- Thunder Cloud Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⛈️%3C/text%3E%3C/svg%3E">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&family=Space+Mono:wght@400;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,6 +22,7 @@
         }
         body { font-family: 'Inter', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
         .wave-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.015; background: repeating-linear-gradient(45deg, transparent, transparent 120px, var(--lavender) 120px, var(--lavender) 121px); }
+        
         header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); padding: 20px 60px; }
         .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
         .header-name { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 700; color: #000; }
@@ -32,6 +33,7 @@
             25% { transform: translateY(-3px) rotate(-5deg); }
             75% { transform: translateY(-3px) rotate(5deg); }
         }
+        
         section { padding: 80px 60px; opacity: 0; transform: translateY(60px); transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
         section.visible { opacity: 1; transform: translateY(0); }
         .container { max-width: 1400px; margin: 0 auto; }
@@ -48,6 +50,7 @@
         .btn-secondary:hover { background: var(--navy); color: var(--white); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3); }
         h2 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; margin-bottom: 60px; color: var(--black); position: relative; display: inline-block; }
         h2::after { content: ''; position: absolute; bottom: -15px; left: 0; width: 100%; height: 4px; background: var(--lavender); border-radius: 3px; }
+        
         #about { padding: 80px 60px; }
         .about-content { display: flex; align-items: center; gap: 80px; max-width: 1200px; margin: 0 auto; }
         .laptop-container { width: 350px; height: 350px; position: relative; flex-shrink: 0; cursor: pointer; }
@@ -75,6 +78,7 @@
         @keyframes laptopBlink { 0%, 100% { opacity: 1; box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4); } 50% { opacity: 0.85; box-shadow: 0 20px 70px rgba(102, 126, 234, 0.6); } }
         .laptop-base { width: 320px; height: 20px; background: linear-gradient(to bottom, #555, #333); border-radius: 0 0 15px 15px; position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); }
         .laptop-keyboard { width: 260px; height: 10px; background: #444; position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); border-radius: 3px; }
+        
         .tools-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease; }
         .tools-popup.active { display: flex; opacity: 1; }
         .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 40px; background: white; border-radius: 20px; max-width: 800px; position: relative; animation: popupSlideIn 0.4s ease; }
@@ -83,7 +87,7 @@
             to { transform: scale(1); opacity: 1; }
         }
         .close-popup { position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer; color: #333; transition: transform 0.3s; }
-        .close-popup:hover { transform: rotate(90deg) scale(1.2); color: var(--accent); }
+        .close-popup:hover { transform: rotate(90deg) scale(1.2); color: var(--lavender); }
         .tool-item { display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 20px; transition: transform 0.3s; }
         .tool-item:hover { transform: scale(1.15) rotate(5deg); }
         .tool-item i { font-size: 50px; }
@@ -96,11 +100,13 @@
         .tool-item.linux i { color: #FCC624; }
         .tool-item.github i { color: #181717; }
         .tool-item p { font-weight: 600; font-size: 14px; color: #333; }
+        
         .about-text { font-size: 24px; line-height: 1.8; }
         .about-text p { margin-bottom: 20px; }
         .about-text .lavender { color: var(--lavender); font-weight: 700; }
         .about-text .black { color: var(--black); font-weight: 400; }
         .fun-tagline { font-family: 'Caveat', cursive; font-size: 28px; color: var(--sky); font-weight: 700; display: block; margin-top: 15px; transform: rotate(-2deg); }
+        
         #projects h2 { font-family: 'Space Mono', monospace; }
         .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; }
         .project-card { background: var(--white); border-radius: 24px; padding: 50px; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -111,6 +117,7 @@
         .tech-tag { padding: 8px 18px; background: var(--lavender); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--white); }
         .project-link { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s; }
         .project-link:hover { gap: 18px; color: var(--sky); }
+        
         #experience h2 { font-family: 'Fira Code', monospace; }
         .experience-card { max-width: 1000px; margin: 0 auto; background: var(--white); border-radius: 24px; padding: 50px; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06); border-left: 6px solid var(--lavender); transition: all 0.4s; }
         .experience-card:hover { transform: translateY(-8px); box-shadow: 0 20px 70px rgba(139, 122, 184, 0.3); }
@@ -119,6 +126,7 @@
         .experience-card ul { list-style: none; padding-left: 0; }
         .experience-card li { padding-left: 30px; position: relative; margin-bottom: 15px; font-size: 16px; line-height: 1.8; font-weight: 300; }
         .experience-card li::before { content: '▸'; position: absolute; left: 0; color: var(--lavender); font-size: 20px; font-weight: bold; }
+        
         #skills h2 { font-family: 'Space Mono', monospace; }
         .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
         .skill-card { background: var(--white); border: 2px solid #e0e0e0; border-radius: 20px; padding: 40px 25px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03); }
@@ -133,18 +141,19 @@
         .skill-card.linux i { color: #FCC624; }
         .skill-card.github i { color: #181717; }
         .skill-card p { font-size: 16px; font-weight: 600; color: var(--black); }
+        
         footer { background: var(--black); color: var(--white); padding: 80px 60px; text-align: center; }
         footer h2 { color: var(--white); margin-bottom: 20px; }
         footer h2::after { background: var(--lavender); }
         .footer-subtitle { font-size: 18px; color: rgba(255, 255, 255, 0.7); margin-bottom: 50px; font-weight: 400; }
         
-        /* Enhanced Footer Content */
         .footer-content { max-width: 900px; margin: 0 auto; }
         .tech-stack { margin-bottom: 50px; }
         .tech-stack h3 { font-size: 24px; color: var(--lavender); margin-bottom: 30px; font-weight: 600; }
         .tech-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 20px; }
-        .tech-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-        .tech-item i { font-size: 40px; }
+        .tech-item { display: flex; flex-direction: column; align-items: center; gap: 10px; transition: transform 0.3s; }
+        .tech-item:hover { transform: scale(1.2) rotate(5deg); }
+        .tech-item i { font-size: 50px; }
         .tech-item.html i { color: #E34F26; }
         .tech-item.css i { color: #1572B6; }
         .tech-item.js i { color: #F7DF1E; }
@@ -200,6 +209,7 @@
             footer { padding: 50px 30px; }
             .tech-grid { gap: 20px; }
             .music-section h3 { font-size: 18px; }
+            .tech-item i { font-size: 35px; }
         }
     </style>
 </head>
@@ -323,7 +333,7 @@
             <p class="footer-subtitle">Reach out for collaborations or just say hi!</p>
             
             <div class="tech-stack">
-                <h3>Built With</h3>
+                <h3>Built With ⚡</h3>
                 <div class="tech-grid">
                     <div class="tech-item html">
                         <i class="fab fa-html5"></i>
@@ -333,9 +343,3 @@
                         <i class="fab fa-css3-alt"></i>
                         <span>CSS3</span>
                     </div>
-                    <div class="tech-item js">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-                <p style="font-size: 14px; color: rgba(255,255,255,0
