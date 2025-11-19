@@ -3,705 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Litheeshkumar G - DevOps Engineer specializing in AWS, Docker, Kubernetes, and Cloud Infrastructure">
     <title>Litheeshkumar G - Cloud & DevOps Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-   <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    :root {
-        --lavender: #8B7AB8;
-        --sky: #4FC3F7;
-        --navy: #1A237E;
-        --black: #111;
-        --white: #ffffff;
-    }
-
-    body {
-        font-family: 'Inter', sans-serif;
-        color: var(--black);
-        background: var(--white);
-        overflow-x: hidden;
-    }
-
-    .wave-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        opacity: 0.015;
-        background: repeating-linear-gradient(45deg, transparent, transparent 120px, var(--lavender) 120px, var(--lavender) 121px);
-    }
-
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        padding: 20px 60px;
-    }
-
-    .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .header-name {
-        font-family: 'Playfair Display', serif;
-        font-size: 24px;
-        font-weight: 700;
-        color: #000;
-    }
-
-    .header-role {
-        font-size: 18px;
-        font-weight: 600;
-        color: #000;
-        font-family: 'Space Mono', monospace;
-    }
-
-    section {
-        padding: 80px 60px;
-        opacity: 0;
-        transform: translateY(60px);
-        transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .container {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .hero {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        padding-top: 100px;
-    }
-
-    .hero-content {
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .typing-subtitle {
-        font-size: 48px;
-        font-weight: 600;
-        line-height: 1.4;
-        color: var(--black);
-        margin-bottom: 50px;
-    }
-
-    .typing-subtitle .highlight {
-        color: var(--lavender);
-        position: relative;
-        display: inline-block;
-        font-weight: 700;
-    }
-
-    .typing-subtitle .highlight::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: var(--lavender);
-        border-radius: 2px;
-    }
-
-    .hero-buttons {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-    }
-
-    .btn {
-        padding: 18px 45px;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .btn-primary {
-        background: var(--lavender);
-        color: var(--white);
-        border: none;
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(139, 122, 184, 0.4);
-    }
-
-    .btn-secondary {
-        background: transparent;
-        color: var(--navy);
-        border: 2px solid var(--navy);
-    }
-
-    .btn-secondary:hover {
-        background: var(--navy);
-        color: var(--white);
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3);
-    }
-
-    h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 56px;
-        font-weight: 900;
-        margin-bottom: 60px;
-        color: var(--black);
-        position: relative;
-        display: inline-block;
-    }
-
-    h2::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: var(--lavender);
-        border-radius: 3px;
-    }
-
-    #about {
-        padding: 80px 60px;
-    }
-
-    .about-content {
-        display: flex;
-        align-items: center;
-        gap: 80px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .laptop-container {
-        width: 350px;
-        height: 350px;
-        position: relative;
-        flex-shrink: 0;
-        cursor: pointer;
-    }
-
-    .laptop-3d {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transition: transform 0.3s ease;
-    }
-
-    .laptop-3d:hover {
-        transform: scale(1.05);
-    }
-
-    .laptop-screen {
-        width: 280px;
-        height: 180px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 10px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -60%);
-        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
-        animation: laptopBlink 3s ease-in-out infinite;
-        border: 8px solid #333;
-    }
-
-    @keyframes laptopBlink {
-        0%, 100% { opacity: 1; box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4); }
-        50% { opacity: 0.7; box-shadow: 0 20px 70px rgba(102, 126, 234, 0.6); }
-    }
-
-    .laptop-base {
-        width: 320px;
-        height: 20px;
-        background: linear-gradient(to bottom, #555, #333);
-        border-radius: 0 0 15px 15px;
-        position: absolute;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .laptop-keyboard {
-        width: 260px;
-        height: 10px;
-        background: #444;
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 3px;
-    }
-
-    .tools-popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 2000;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .tools-popup.active {
-        display: flex;
-        opacity: 1;
-    }
-
-    .tools-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        padding: 40px;
-        background: white;
-        border-radius: 20px;
-        max-width: 800px;
-        position: relative;
-    }
-
-    .close-popup {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 30px;
-        cursor: pointer;
-        color: #333;
-    }
-
-    .tool-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px;
-        transition: transform 0.3s;
-    }
-
-    .tool-item:hover {
-        transform: scale(1.1);
-    }
-
-    .tool-item i {
-        font-size: 50px;
-    }
-
-    .tool-item.aws i { color: #FF9900; }
-    .tool-item.docker i { color: #2496ED; }
-    .tool-item.kubernetes i { color: #326CE5; }
-    .tool-item.terraform i { color: #7B42BC; }
-    .tool-item.prometheus i { color: #E6522C; }
-    .tool-item.grafana i { color: #F46800; }
-    .tool-item.linux i { color: #FCC624; }
-    .tool-item.github i { color: #181717; }
-
-    .tool-item p {
-        font-weight: 600;
-        font-size: 14px;
-        color: #333;
-    }
-
-    .about-text {
-        font-size: 24px;
-        line-height: 1.8;
-    }
-
-    .about-text p {
-        margin-bottom: 20px;
-    }
-
-    .about-text .lavender {
-        color: var(--lavender);
-        font-weight: 700;
-    }
-
-    .about-text .black {
-        color: var(--black);
-        font-weight: 400;
-    }
-
-    .fun-tagline {
-        font-family: 'Fira Code', monospace;
-        font-size: 20px;
-        color: var(--sky);
-        font-weight: 600;
-        display: block;
-        margin-top: 15px;
-    }
-
-    #projects h2 {
-        font-family: 'Space Mono', monospace;
-    }
-
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 60px;
-    }
-
-    .project-card {
-        background: var(--white);
-        border-radius: 24px;
-        padding: 50px;
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .project-card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 30px 80px rgba(139, 122, 184, 0.3);
-    }
-
-    .project-card h3 {
-        font-size: 28px;
-        margin-bottom: 20px;
-        color: var(--navy);
-        font-weight: 700;
-    }
-
-    .project-card p {
-        font-size: 16px;
-        line-height: 1.8;
-        color: var(--black);
-        margin-bottom: 25px;
-        font-weight: 300;
-    }
-
-    .tech-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 30px;
-    }
-
-    .tech-tag {
-        padding: 8px 18px;
-        background: var(--lavender);
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--white);
-    }
-
-    .project-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--navy);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 15px;
-        transition: all 0.3s;
-    }
-
-    .project-link:hover {
-        gap: 18px;
-        color: var(--sky);
-    }
-
-    #experience h2 {
-        font-family: 'Fira Code', monospace;
-    }
-
-    .experience-card {
-        max-width: 1000px;
-        margin: 0 auto;
-        background: var(--white);
-        border-radius: 24px;
-        padding: 50px;
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06);
-        border-left: 6px solid var(--lavender);
-        transition: all 0.4s;
-    }
-
-    .experience-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 70px rgba(139, 122, 184, 0.3);
-    }
-
-    .experience-card h3 {
-        font-size: 30px;
-        color: var(--navy);
-        margin-bottom: 10px;
-        font-weight: 700;
-    }
-
-    .experience-card .date {
-        font-size: 16px;
-        color: var(--sky);
-        margin-bottom: 30px;
-        font-weight: 600;
-    }
-
-    .experience-card ul {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .experience-card li {
-        padding-left: 30px;
-        position: relative;
-        margin-bottom: 15px;
-        font-size: 16px;
-        line-height: 1.8;
-        font-weight: 300;
-    }
-
-    .experience-card li::before {
-        content: '▸';
-        position: absolute;
-        left: 0;
-        color: var(--lavender);
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    #skills h2 {
-        font-family: 'Space Mono', monospace;
-    }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-    }
-
-    .skill-card {
-        background: var(--white);
-        border: 2px solid #e0e0e0;
-        border-radius: 20px;
-        padding: 40px 25px;
-        text-align: center;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-    }
-
-    .skill-card:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .skill-card i {
-        font-size: 55px;
-        margin-bottom: 20px;
-        display: block;
-    }
-
-    .skill-card.aws i { color: #FF9900; }
-    .skill-card.docker i { color: #2496ED; }
-    .skill-card.kubernetes i { color: #326CE5; }
-    .skill-card.terraform i { color: #7B42BC; }
-    .skill-card.prometheus i { color: #E6522C; }
-    .skill-card.grafana i { color: #F46800; }
-    .skill-card.linux i { color: #FCC624; }
-    .skill-card.github i { color: #181717; }
-
-    .skill-card p {
-        font-size: 16px;
-        font-weight: 600;
-        color: var(--black);
-    }
-
-    footer {
-        background: var(--black);
-        color: var(--white);
-        padding: 60px 60px;
-        text-align: center;
-    }
-
-    footer h2 {
-        color: var(--white);
-        margin-bottom: 15px;
-    }
-
-    footer h2::after {
-        background: var(--lavender);
-    }
-
-    .footer-subtitle {
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.5);
-        margin-bottom: 40px;
-        font-weight: 300;
-    }
-
-    .footer-icons {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        margin-bottom: 40px;
-    }
-
-    .footer-icons a {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        font-size: 20px;
-        text-decoration: none;
-        transition: all 0.4s;
-    }
-
-    .footer-icons a.email {
-        background: var(--lavender);
-        color: var(--white);
-    }
-
-    .footer-icons a.linkedin {
-        background: var(--sky);
-        color: var(--white);
-    }
-
-    .footer-icons a.github {
-        background: var(--navy);
-        color: var(--white);
-    }
-
-    .footer-icons a:hover {
-        transform: scale(1.25) translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-    }
-
-    .footer-text {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.4);
-        font-weight: 300;
-    }
-
-    @media (max-width: 768px) {
-        header {
-            padding: 15px 30px;
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --lavender: #8B7AB8;
+            --sky: #4FC3F7;
+            --navy: #1A237E;
+            --black: #111;
+            --white: #ffffff;
         }
-
-        .header-content {
-            flex-direction: column;
-            gap: 8px;
-            align-items: flex-start;
+        body { font-family: 'Inter', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
+        .wave-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.015; background: repeating-linear-gradient(45deg, transparent, transparent 120px, var(--lavender) 120px, var(--lavender) 121px); }
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); padding: 20px 60px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+        .header-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #000; }
+        .header-role { font-size: 18px; font-weight: 600; color: #000; font-family: 'Space Mono', monospace; }
+        section { padding: 80px 60px; opacity: 0; transform: translateY(60px); transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
+        section.visible { opacity: 1; transform: translateY(0); }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; padding-top: 100px; }
+        .hero-content { text-align: center; max-width: 900px; margin: 0 auto; }
+        .typing-subtitle { font-size: 48px; font-weight: 600; line-height: 1.4; color: var(--black); margin-bottom: 50px; }
+        .typing-subtitle .highlight { color: var(--lavender); position: relative; display: inline-block; font-weight: 700; }
+        .typing-subtitle .highlight::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: var(--lavender); border-radius: 2px; }
+        .hero-buttons { display: flex; gap: 30px; justify-content: center; }
+        .btn { padding: 18px 45px; font-size: 16px; font-weight: 600; border-radius: 50px; text-decoration: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block; cursor: pointer; }
+        .btn-primary { background: var(--lavender); color: var(--white); border: none; }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(139, 122, 184, 0.4); }
+        .btn-secondary { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+        .btn-secondary:hover { background: var(--navy); color: var(--white); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; margin-bottom: 60px; color: var(--black); position: relative; display: inline-block; }
+        h2::after { content: ''; position: absolute; bottom: -15px; left: 0; width: 100%; height: 4px; background: var(--lavender); border-radius: 3px; }
+        #about { padding: 80px 60px; }
+        .about-content { display: flex; align-items: center; gap: 80px; max-width: 1200px; margin: 0 auto; }
+        .laptop-container { width: 350px; height: 350px; position: relative; flex-shrink: 0; cursor: pointer; }
+        .laptop-3d { width: 100%; height: 100%; position: relative; transition: transform 0.3s ease; }
+        .laptop-3d:hover { transform: scale(1.05); }
+        .laptop-screen { width: 280px; height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4); animation: laptopBlink 3s ease-in-out infinite; border: 8px solid #333; }
+        @keyframes laptopBlink { 0%, 100% { opacity: 1; box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4); } 50% { opacity: 0.7; box-shadow: 0 20px 70px rgba(102, 126, 234, 0.6); } }
+        .laptop-base { width: 320px; height: 20px; background: linear-gradient(to bottom, #555, #333); border-radius: 0 0 15px 15px; position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); }
+        .laptop-keyboard { width: 260px; height: 10px; background: #444; position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); border-radius: 3px; }
+        .tools-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease; }
+        .tools-popup.active { display: flex; opacity: 1; }
+        .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 40px; background: white; border-radius: 20px; max-width: 800px; position: relative; }
+        .close-popup { position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer; color: #333; }
+        .tool-item { display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 20px; transition: transform 0.3s; }
+        .tool-item:hover { transform: scale(1.1); }
+        .tool-item i { font-size: 50px; }
+        .tool-item.aws i { color: #FF9900; }
+        .tool-item.docker i { color: #2496ED; }
+        .tool-item.kubernetes i { color: #326CE5; }
+        .tool-item.terraform i { color: #7B42BC; }
+        .tool-item.prometheus i { color: #E6522C; }
+        .tool-item.grafana i { color: #F46800; }
+        .tool-item.linux i { color: #FCC624; }
+        .tool-item.github i { color: #181717; }
+        .tool-item p { font-weight: 600; font-size: 14px; color: #333; }
+        .about-text { font-size: 24px; line-height: 1.8; }
+        .about-text p { margin-bottom: 20px; }
+        .about-text .lavender { color: var(--lavender); font-weight: 700; }
+        .about-text .black { color: var(--black); font-weight: 400; }
+        .fun-tagline { font-family: 'Fira Code', monospace; font-size: 20px; color: var(--sky); font-weight: 600; display: block; margin-top: 15px; }
+        #projects h2 { font-family: 'Space Mono', monospace; }
+        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; }
+        .project-card { background: var(--white); border-radius: 24px; padding: 50px; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .project-card:hover { transform: translateY(-15px); box-shadow: 0 30px 80px rgba(139, 122, 184, 0.3); }
+        .project-card h3 { font-size: 28px; margin-bottom: 20px; color: var(--navy); font-weight: 700; }
+        .project-card p { font-size: 16px; line-height: 1.8; color: var(--black); margin-bottom: 25px; font-weight: 300; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+        .tech-tag { padding: 8px 18px; background: var(--lavender); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--white); }
+        .project-link { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s; }
+        .project-link:hover { gap: 18px; color: var(--sky); }
+        #experience h2 { font-family: 'Fira Code', monospace; }
+        .experience-card { max-width: 1000px; margin: 0 auto; background: var(--white); border-radius: 24px; padding: 50px; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06); border-left: 6px solid var(--lavender); transition: all 0.4s; }
+        .experience-card:hover { transform: translateY(-8px); box-shadow: 0 20px 70px rgba(139, 122, 184, 0.3); }
+        .experience-card h3 { font-size: 30px; color: var(--navy); margin-bottom: 10px; font-weight: 700; }
+        .experience-card .date { font-size: 16px; color: var(--sky); margin-bottom: 30px; font-weight: 600; }
+        .experience-card ul { list-style: none; padding-left: 0; }
+        .experience-card li { padding-left: 30px; position: relative; margin-bottom: 15px; font-size: 16px; line-height: 1.8; font-weight: 300; }
+        .experience-card li::before { content: '▸'; position: absolute; left: 0; color: var(--lavender); font-size: 20px; font-weight: bold; }
+        #skills h2 { font-family: 'Space Mono', monospace; }
+        .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .skill-card { background: var(--white); border: 2px solid #e0e0e0; border-radius: 20px; padding: 40px 25px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03); }
+        .skill-card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); }
+        .skill-card i { font-size: 55px; margin-bottom: 20px; display: block; }
+        .skill-card.aws i { color: #FF9900; }
+        .skill-card.docker i { color: #2496ED; }
+        .skill-card.kubernetes i { color: #326CE5; }
+        .skill-card.terraform i { color: #7B42BC; }
+        .skill-card.prometheus i { color: #E6522C; }
+        .skill-card.grafana i { color: #F46800; }
+        .skill-card.linux i { color: #FCC624; }
+        .skill-card.github i { color: #181717; }
+        .skill-card p { font-size: 16px; font-weight: 600; color: var(--black); }
+        footer { background: var(--black); color: var(--white); padding: 60px 60px; text-align: center; }
+        footer h2 { color: var(--white); margin-bottom: 15px; }
+        footer h2::after { background: var(--lavender); }
+        .footer-subtitle { font-size: 16px; color: rgba(255, 255, 255, 0.5); margin-bottom: 40px; font-weight: 300; }
+        .footer-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 40px; }
+        .footer-icons a { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 20px; text-decoration: none; transition: all 0.4s; }
+        .footer-icons a.email { background: var(--lavender); color: var(--white); }
+        .footer-icons a.linkedin { background: var(--sky); color: var(--white); }
+        .footer-icons a.github { background: var(--navy); color: var(--white); }
+        .footer-icons a:hover { transform: scale(1.25) translateY(-5px); box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3); }
+        .footer-text { font-size: 14px; color: rgba(255, 255, 255, 0.4); font-weight: 300; }
+        @media (max-width: 768px) {
+            header { padding: 15px 30px; }
+            .header-content { flex-direction: column; gap: 8px; align-items: flex-start; }
+            .header-name { font-size: 20px; }
+            .header-role { font-size: 14px; }
+            section { padding: 50px 30px; }
+            .hero { padding-top: 120px; }
+            .typing-subtitle { font-size: 28px; }
+            .hero-buttons { flex-direction: column; gap: 15px; }
+            h2 { font-size: 36px; margin-bottom: 40px; }
+            .about-content { flex-direction: column; text-align: center; gap: 40px; }
+            .laptop-container { width: 280px; height: 280px; }
+            .laptop-screen { width: 220px; height: 140px; }
+            .laptop-base { width: 260px; }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 30px; max-width: 90%; }
+            .about-text { font-size: 18px; }
+            .projects-grid { grid-template-columns: 1fr; gap: 40px; }
+            .project-card { padding: 35px; }
+            .experience-card { padding: 35px; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            footer { padding: 50px 30px; }
         }
-
-        .header-name {
-            font-size: 20px;
-        }
-
-        .header-role {
-            font-size: 14px;
-        }
-
-        section {
-            padding: 50px 30px;
-        }
-
-        .hero {
-            padding-top: 120px;
-        }
-
-        .typing-subtitle {
-            font-size: 28px;
-        }
-
-        .hero-buttons {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        .about-content {
-            flex-direction: column;
-            text-align: center;
-            gap: 40px;
-        }
-
-        .laptop-container {
-            width: 280px;
-            height: 280px;
-        }
-
-        .laptop-screen {
-            width: 220px;
-            height: 140px;
-        }
-
-        .laptop-base {
-            width: 260px;
-        }
-
-        .tools-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 30px;
-            max-width: 90%;
-        }
-
-        .about-text {
-            font-size: 18px;
-        }
-
-        .projects-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-
-        .project-card {
-            padding: 35px;
-        }
-
-        .experience-card {
-            padding: 35px;
-        }
-
-        .skills-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        footer {
-            padding: 50px 30px;
-        }
-    }
-</style>
+    </style>
+</head>
+<body>
+    <div class="wave-bg"></div>
+    <header>
+        <div class="header-content">
+            <div class="header-name">Litheeshkumar G</div>
+            <div class="header-role">Cloud & DevOps</div>
+        </div>
+    </header>
+    <section class="hero visible">
+        <div class="container">
+            <div class="hero-content">
+                <div class="typing-subtitle">I automate the <span class="highlight">boring parts</span> so your systems run <span class="highlight">smarter</span>, not harder.</div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#footer" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="laptop-container" id="laptopClick">
+                    <div class="laptop-3d">
+                        <div class="laptop-screen"></div>
+                        <div class="laptop-keyboard"></div>
+                        <div class="laptop-base"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p><span class="black">I'm a</span> <span class="lavender">DevOps & Cloud Engineer</span> <span class="black">who builds scalable, automated systems and smooth deployment workflows for fast and reliable delivery.</span></p>
+                    <p><span class="black">I design efficient infrastructure, automate repetitive tasks, and create dashboards for clear system visibility, always improving how systems run and deliver.</span></p>
+                    <span class="fun-tagline">Automating chaos so humans can chill 😎🤖</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="tools-popup" id="toolsPopup">
+        <div class="tools-grid">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <div class="tool-item aws"><i class="fab fa-aws"></i><p>AWS</p></div>
+            <div class="tool-item docker"><i class="fab fa-docker"></i><p>Docker</p></div>
+            <div class="tool-item kubernetes"><i class="fas fa-dharmachakra"></i><p>Kubernetes</p></div>
+            <div class="tool-item terraform"><i class="fas fa-code-branch"></i><p>Terraform</p></div>
+            <div class="tool-item prometheus"><i class="fas fa-chart-line"></i><p>Prometheus</p></div>
+            <div class="tool-item grafana"><i class="fas fa-chart-area"></i><p>Grafana</p></div>
+            <div class="tool-item linux"><i class="fab fa-linux"></i><p>Linux</p></div>
+            <div class="tool-item github"><i class="fab fa-github"></i><p>GitHub Actions</p></div>
+        </div>
+    </div>
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>🧠 Mental Health AI Chatbot</h3>
+                    <p>Built an intelligent chatbot using facial emotion recognition and machine learning to provide mental health support. Deployed on GCP with Docker containerization, Kubernetes orchestration, and automated CI/CD pipelines for seamless updates.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Facial Emotion</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">GCP</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                    </div>
+                    <a href="https://github.com/21CSA32" class="project-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>☁️ AWS CI/CD Pipeline</h3>
+                    <p>Architected a fully automated CI/CD pipeline using AWS CodePipeline, Docker, EC2, and Streamlit. Implemented infrastructure as code with Terraform, achieving zero-downtime deployments and reducing release time by 70%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS CodePipeline</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">EC2</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Terraform</span>
+                    </div>
+                    <a href="https://github.com/21CSA32" class="project-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3>DevOps Intern — Sense 7AI Data Solutions</h3>
+                <p class="date">Jun 2025 – Present | Coimbatore, India</p>
+                <ul>
+                    <li>Managed real-time cloud deployments and server environments, improving deployment stability by 30%.</li>
+                    <li>Built Docker setups for frontend, backend, and ML services; enhanced service routing with Nginx, improving load handling by 40%.</li>
+                    <li>Deployed multi-service applications on GCP using Compute Engine, Cloud Run, Cloud Storage, and VPC, reducing deployment time by 50%.</li>
+                    <li>Configured IP management, routing, and firewall rules, improving network security and access control by 35%.</li>
+                    <li>Implemented NAS backup solutions for laptops and local servers, increasing data reliability by 60%.</li>
+                    <li>Automated SharePoint user cleanup workflows, reducing manual effort by 70% and keeping user lists 100% up-to-date.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card aws"><i class="fab fa-aws"></i><p>AWS</p></div>
+                <div class="skill-card docker"><i class="fab fa-docker"></i><p>Docker</p></div>
+                <div class="skill-card kubernetes"><i class="fas fa-dharmachakra"></i><p>Kubernetes</p></div>
+                <div class="skill-card terraform"><i class="fas fa-code-branch"></i><p>Terraform</p></div>
+                <div class="skill-card prometheus"><i class="fas fa-chart-line"></i><p>Prometheus</p></div>
+                <div class="skill-card grafana"><i class="fas fa-chart-area"></i><p>Grafana</p></div>
+                <div class="skill-card linux"><i class="fab fa-linux"></i><p>Linux</p></div>
+                <div class="skill-card github"><i class="fab fa-github"></i><p>GitHub Actions</p></div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p class="footer-subtitle">Feel free to talk or interact</p>
+            <div class="footer-icons">
+                <a href="mailto:litheeshkumar93@gmail.com" class="email" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/litheeshkumar-g-ab076824b" target="_blank" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/21CSA32" target="_blank" class="github" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="footer-text">© 2025 Litheeshkumar G — Built with passion</p>
+        </div>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+        document.querySelectorAll('section').forEach(section => { if (!section.classList.contains('visible')) observer.observe(section); });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        document.getElementById('laptopClick').addEventListener('click', () => {
+            document.getElementById('toolsPopup').classList.add('active');
+        });
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('toolsPopup').classList.remove('active');
+        });
+        document.getElementById('toolsPopup').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('toolsPopup')) document.getElementById('toolsPopup').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
