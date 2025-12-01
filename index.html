@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Litheeshkumar G - Cloud & DevOps Engineer</title>
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⛈️%3C/text%3E%3C/svg%3E">
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E☁️%3C/text%3E%3C/svg%3E">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&family=Space+Mono:wght@400;700&family=Caveat:wght@400;600;700&display=swap"
         rel="stylesheet">
@@ -20,18 +20,39 @@
         }
 
         :root {
-            --lavender: #8B7AB8;
-            --sky: #4FC3F7;
-            --navy: #1A237E;
-            --black: #111;
-            --white: #ffffff;
+            /* Light Theme (Default) */
+            --bg-dark: #ffffff;
+            --bg-card: rgba(0, 0, 0, 0.03);
+            --text-main: #111111;
+            --text-muted: #555555;
+            --accent-primary: #8B7AB8;
+            --accent-secondary: #4FC3F7;
+            --accent-glow: rgba(139, 122, 184, 0.3);
+            --gradient-main: linear-gradient(135deg, #8B7AB8 0%, #4FC3F7 100%);
+            --header-bg: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --bg-dark: #0a0e17;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-primary: #8B7AB8;
+            --accent-secondary: #4FC3F7;
+            --accent-glow: rgba(139, 122, 184, 0.5);
+            --gradient-main: linear-gradient(135deg, #8B7AB8 0%, #4FC3F7 100%);
+            --header-bg: rgba(10, 14, 23, 0.7);
+            --border-color: rgba(255, 255, 255, 0.05);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--black);
-            background: var(--white);
+            color: var(--text-main);
+            background: var(--bg-dark);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .wave-bg {
@@ -41,20 +62,48 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.015;
-            background: repeating-linear-gradient(45deg, transparent, transparent 120px, var(--lavender) 120px, var(--lavender) 121px);
+            background:
+                radial-gradient(circle at 15% 50%, rgba(79, 195, 247, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 122, 184, 0.08) 0%, transparent 25%);
+            filter: blur(40px);
+            animation: bgPulse 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
         }
 
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            padding: 20px 60px;
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 15px 40px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            /* Shard Effect */
+            clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+        }
+
+        header:hover {
+            width: 92%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
 
         .header-content {
@@ -69,22 +118,52 @@
             font-family: 'Inter', sans-serif;
             font-size: 24px;
             font-weight: 700;
-            color: #000;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
         }
 
         .header-role {
-            font-size: 18px;
-            font-weight: 600;
-            color: #000;
-            font-family: 'Space Mono', monospace;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            /* Unified font */
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .header-role i {
-            color: var(--lavender);
+            color: var(--accent-primary);
             animation: headphoneBounce 2s ease-in-out infinite;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+            color: var(--accent-secondary);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
         }
 
         @keyframes headphoneBounce {
@@ -146,29 +225,35 @@
         }
 
         .typing-subtitle {
-            font-size: 48px;
-            font-weight: 600;
-            line-height: 1.4;
-            color: var(--black);
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-main);
             margin-bottom: 50px;
+            letter-spacing: -1px;
         }
 
         .typing-subtitle .highlight {
-            color: var(--lavender);
+            background: var(--gradient-main);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             position: relative;
             display: inline-block;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .typing-subtitle .highlight::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 5px;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: var(--lavender);
-            border-radius: 2px;
+            height: 10px;
+            background: var(--accent-primary);
+            opacity: 0.2;
+            z-index: -1;
+            transform: skewX(-15deg);
         }
 
         .hero-buttons {
@@ -178,46 +263,50 @@
         }
 
         .btn {
-            padding: 18px 45px;
+            padding: 16px 40px;
             font-size: 16px;
             font-weight: 600;
-            border-radius: 50px;
+            border-radius: 12px;
             text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: var(--lavender);
-            color: var(--white);
-            border: none;
+            background: var(--text-main);
+            color: var(--bg-dark);
+            border: 1px solid var(--text-main);
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(139, 122, 184, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+            background: transparent;
+            color: var(--text-main);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--navy);
-            border: 2px solid var(--navy);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: var(--navy);
-            color: var(--white);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(26, 35, 126, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--text-main);
+            transform: translateY(-3px);
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 56px;
-            font-weight: 900;
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 60px;
-            color: var(--black);
+            color: var(--text-main);
             position: relative;
             display: inline-block;
         }
@@ -227,15 +316,15 @@
             position: absolute;
             bottom: -15px;
             left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--lavender);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-main);
             border-radius: 3px;
         }
 
         #about {
             padding: 100px 60px;
-            background: #fafafa;
+            background: transparent;
         }
 
         .about-content {
@@ -246,93 +335,140 @@
             margin: 0 auto;
         }
 
+        /* Redesigned Laptop */
         .laptop-container {
-            width: 350px;
-            height: 350px;
+            width: 400px;
+            height: 260px;
+            perspective: 1000px;
             position: relative;
-            flex-shrink: 0;
             cursor: pointer;
         }
 
         .laptop-3d {
             width: 100%;
             height: 100%;
-            position: relative;
-            transition: transform 0.3s ease;
-            animation: laptopFloat 4s ease-in-out infinite;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            animation: laptopFloat 6s ease-in-out infinite;
+        }
+
+        .laptop-screen {
+            width: 340px;
+            height: 220px;
+            background: #000;
+            border-radius: 12px 12px 0 0;
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 4px solid #333;
+            border-bottom: none;
+            box-shadow: 0 0 0 2px #555;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .laptop-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .laptop-screen::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Screen Content (Code/Terminal) */
+        .screen-content {
+            padding: 15px;
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            color: #0f0;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* For this CSS-only 3D effect to work simply without complex transforms, 
+           we'll stick to a stylized 2D/3D hybrid that looks good. 
+           Let's use the previous structure but refined. */
+
+        .laptop-base {
+            width: 380px;
+            height: 14px;
+            background: linear-gradient(to bottom, #d6d6d6, #999);
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .laptop-base::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .laptop-container:hover .laptop-screen {
+            transform: translateX(-50%) translateY(-10px) scale(1.02);
+        }
+
+        .laptop-container:hover .laptop-base {
+            transform: translateX(-50%) scale(1.02);
+            box-shadow: 0 25px 50px rgba(139, 122, 184, 0.4);
         }
 
         @keyframes laptopFloat {
 
             0%,
             100% {
-                transform: translateY(0px) rotate(0deg);
+                transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-15px) rotate(2deg);
+                transform: translateY(-15px);
             }
         }
 
-        .laptop-3d:hover {
-            transform: scale(1.1) rotate(5deg) !important;
-        }
-
-        .laptop-screen {
-            width: 280px;
-            height: 180px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
-            border: 8px solid #333;
-            overflow: hidden;
-        }
-
-        .laptop-screen::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
-            animation: screenShine 3s linear infinite;
-        }
-
-        @keyframes screenShine {
-            0% {
-                transform: translateX(-100%) translateY(-100%);
-            }
-
-            100% {
-                transform: translateX(100%) translateY(100%);
-            }
-        }
-
-        .laptop-base {
-            width: 320px;
-            height: 20px;
-            background: linear-gradient(to bottom, #555, #333);
-            border-radius: 0 0 15px 15px;
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .laptop-keyboard {
-            width: 260px;
-            height: 10px;
-            background: #444;
-            position: absolute;
-            top: 55%;
-            left: 50%;
+        /* Cursor Trail */
+        .cursor-dot,
+        .cursor-dot-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
             transform: translate(-50%, -50%);
-            border-radius: 3px;
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-primary);
+        }
+
+        .cursor-dot-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-primary);
+            opacity: 0.5;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
 
         .tools-popup {
@@ -450,8 +586,14 @@
         }
 
         .about-text {
-            font-size: 24px;
+            font-size: 20px;
             line-height: 1.8;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
         }
 
         .about-text p {
@@ -459,27 +601,29 @@
         }
 
         .about-text .lavender {
-            color: var(--lavender);
+            color: var(--accent-primary);
             font-weight: 700;
         }
 
         .about-text .black {
-            color: var(--black);
+            color: var(--text-muted);
             font-weight: 400;
         }
 
         .fun-tagline {
-    font-family: 'Sawarabi Mincho', serif;  /* Japanese-style font */
-    font-size: 28px;
-    color: #6a5acd;                         /* Dark lavender */
-    font-weight: 700;
-    display: block;
-    margin-top: 15px;
-}
+            font-family: 'Caveat', cursive;
+            font-size: 32px;
+            color: var(--accent-primary);
+            font-weight: 700;
+            display: block;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            transform: rotate(-2deg);
+        }
 
 
         #projects {
-            background: var(--white);
+            background: transparent;
         }
 
         #projects h2 {
@@ -493,29 +637,31 @@
         }
 
         .project-card {
-            background: var(--white);
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 50px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .project-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(139, 122, 184, 0.3);
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
 
         .project-card h3 {
             font-size: 28px;
             margin-bottom: 20px;
-            color: var(--navy);
+            color: var(--text-main);
             font-weight: 700;
         }
 
         .project-card p {
             font-size: 16px;
             line-height: 1.8;
-            color: var(--black);
+            color: var(--text-muted);
             margin-bottom: 25px;
             font-weight: 300;
         }
@@ -528,32 +674,33 @@
         }
 
         .tech-tag {
-            padding: 8px 18px;
-            background: var(--lavender);
+            padding: 6px 16px;
+            background: rgba(139, 122, 184, 0.1);
+            border: 1px solid rgba(139, 122, 184, 0.2);
             border-radius: 20px;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--white);
+            font-weight: 500;
+            color: var(--accent-primary);
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            color: var(--navy);
+            color: var(--text-main);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 15px;
             transition: all 0.3s;
         }
 
         .project-link:hover {
-            gap: 18px;
-            color: var(--sky);
+            gap: 15px;
+            color: var(--accent-secondary);
         }
 
         #experience {
-            background: #fafafa;
+            background: transparent;
         }
 
         #experience h2 {
@@ -563,31 +710,33 @@
         .experience-card {
             max-width: 1000px;
             margin: 0 auto;
-            background: var(--white);
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 50px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.06);
-            border-left: 6px solid var(--lavender);
+            border-left: 4px solid var(--accent-primary);
             transition: all 0.4s;
         }
 
         .experience-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 70px rgba(139, 122, 184, 0.3);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .experience-card h3 {
             font-size: 30px;
-            color: var(--navy);
+            color: var(--text-main);
             margin-bottom: 10px;
             font-weight: 700;
         }
 
         .experience-card .date {
             font-size: 16px;
-            color: var(--sky);
+            color: var(--accent-secondary);
             margin-bottom: 30px;
-            font-weight: 600;
+            font-weight: 500;
+            font-family: 'Space Mono', monospace;
         }
 
         .experience-card ul {
@@ -602,19 +751,20 @@
             font-size: 16px;
             line-height: 1.8;
             font-weight: 300;
+            color: var(--text-muted);
         }
 
         .experience-card li::before {
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--lavender);
+            color: var(--accent-primary);
             font-size: 20px;
             font-weight: bold;
         }
 
         #skills {
-            background: var(--white);
+            background: transparent;
         }
 
         #skills h2 {
@@ -628,18 +778,19 @@
         }
 
         .skill-card {
-            background: var(--white);
-            border: 2px solid #e0e0e0;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 40px 25px;
             text-align: center;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
         }
 
         .skill-card:hover {
             transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-primary);
         }
 
         .skill-card i {
@@ -683,18 +834,26 @@
         .skill-card p {
             font-size: 16px;
             font-weight: 600;
-            color: var(--black);
+            color: var(--text-main);
+        }
+
+        /* GitHub Icon Visibility in Dark Mode */
+        [data-theme="dark"] .skill-card.github i {
+            color: #ffffff;
         }
 
         footer {
-            background: var(--black);
-            color: var(--white);
-            padding: 50px 60px;
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 40px 20px;
+            /* Reduced Size */
             text-align: center;
+            border-top: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
         }
 
         footer h2 {
-            color: var(--white);
+            color: var(--text-main);
             margin-bottom: 15px;
             font-size: 42px;
         }
@@ -705,7 +864,7 @@
 
         .footer-subtitle {
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-muted);
             margin-bottom: 30px;
             font-weight: 400;
         }
@@ -715,51 +874,89 @@
             margin: 0 auto;
         }
 
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            /* Increased spacing */
+            margin-bottom: 40px;
+        }
+
         .contact-buttons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 60px;              /* Circular size */
-    height: 60px;             /* Circular size */
-    border-radius: 50%;       /* Makes it round */
-    background: var(--lavender);
-    color: #fff;
-    font-size: 20px;          /* Icon/text size */
-    text-decoration: none;
-    transition: 0.3s ease;
-}
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            width: 60px;
+            /* Circular size */
+            height: 60px;
+            /* Circular size */
+            border-radius: 50%;
+            /* Makes it round */
+            background: var(--lavender);
+            color: #fff;
+            font-size: 20px;
+            /* Icon/text size */
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
 
         .contact-btn {
-            padding: 12px 30px;
+            padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 23px;
+            font-size: 16px;
             display: inline-flex;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
             transition: all 0.4s;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
         }
 
+        /* Light Theme Colors */
         .contact-btn.email {
-            background: var(--lavender);
-            color: var(--white);
+            background: rgba(139, 122, 184, 0.15);
+            color: #8B7AB8;
+            border-color: rgba(139, 122, 184, 0.3);
         }
 
         .contact-btn.linkedin {
-            background: #0077B5;
-            color: var(--white);
+            background: rgba(0, 119, 181, 0.15);
+            color: #0077B5;
+            border-color: rgba(0, 119, 181, 0.3);
         }
 
         .contact-btn.github {
-            background: #333;
-            color: var(--white);
+            background: rgba(51, 51, 51, 0.1);
+            color: #333;
+            border-color: rgba(51, 51, 51, 0.3);
+        }
+
+        /* Dark Theme Overrides */
+        [data-theme="dark"] .contact-btn.email {
+            background: rgba(139, 122, 184, 0.15);
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .contact-btn.linkedin {
+            background: rgba(0, 119, 181, 0.15);
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .contact-btn.github {
+            background: rgba(128, 128, 128, 0.15);
+            color: var(--text-main);
+            border-color: var(--border-color);
         }
 
         .contact-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 5px 20px var(--accent-glow);
+            border-color: var(--accent-primary);
         }
 
         .contact-btn i {
@@ -803,26 +1000,27 @@
 
         .music-note {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-muted);
             text-align: center;
         }
 
         .footer-text {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.4);
+            color: var(--text-muted);
             font-weight: 300;
             margin-top: 25px;
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 15px 30px;
+                padding: 15px 20px;
+                background: rgba(10, 14, 23, 0.9);
             }
 
             .header-content {
                 flex-direction: column;
-                gap: 8px;
-                align-items: flex-start;
+                gap: 10px;
+                align-items: center;
             }
 
             .header-name {
@@ -834,20 +1032,27 @@
             }
 
             section {
-                padding: 60px 30px;
+                padding: 60px 20px;
             }
 
             .hero {
-                padding-top: 120px;
+                padding-top: 100px;
             }
 
             .typing-subtitle {
-                font-size: 28px;
+                font-size: 32px;
+                line-height: 1.3;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 gap: 15px;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
             }
 
             h2 {
@@ -862,17 +1067,18 @@
             }
 
             .laptop-container {
-                width: 280px;
-                height: 280px;
+                width: 100%;
+                height: 220px;
+                margin-bottom: 30px;
             }
 
             .laptop-screen {
-                width: 220px;
-                height: 140px;
+                width: 260px;
+                height: 170px;
             }
 
             .laptop-base {
-                width: 260px;
+                width: 300px;
             }
 
             .tools-grid {
@@ -887,20 +1093,20 @@
             }
 
             .fun-tagline {
-                font-size: 22px;
+                font-size: 20px;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
             }
 
             .project-card {
-                padding: 35px;
+                padding: 30px;
             }
 
             .experience-card {
-                padding: 35px;
+                padding: 30px;
             }
 
             .skills-grid {
@@ -909,12 +1115,17 @@
             }
 
             footer {
-                padding: 40px 30px;
+                padding: 40px 20px;
             }
 
             .contact-buttons {
                 flex-direction: column;
-                gap: 12px;
+                gap: 15px;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -929,6 +1140,10 @@
             <div class="header-role"><i class="fas fa-headphones"></i> Cloud & DevOps</div>
         </div>
     </header>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <section class="hero">
         <div class="container">
@@ -949,8 +1164,17 @@
             <div class="about-content">
                 <div class="laptop-container" id="laptopClick">
                     <div class="laptop-3d">
-                        <div class="laptop-screen"></div>
-                        <div class="laptop-keyboard"></div>
+                        <div class="laptop-screen">
+                            <div class="screen-content">
+                                > initializing system...<br>
+                                > loading skills...<br>
+                                > [OK] AWS<br>
+                                > [OK] Docker<br>
+                                > [OK] Kubernetes<br>
+                                > [OK] Terraform<br>
+                                > system ready_
+                            </div>
+                        </div>
                         <div class="laptop-base"></div>
                     </div>
                 </div>
@@ -1028,8 +1252,8 @@
                         <span class="tech-tag">Streamlit</span>
                         <span class="tech-tag">Terraform</span>
                     </div>
-                    <a href="https://github.com/Litheesh45/AWS-CI-CD.git" class="project-link" target="_blank">View on GitHub <i
-                            class="fas fa-arrow-right"></i></a>
+                    <a href="https://github.com/Litheesh45/AWS-CI-CD.git" class="project-link" target="_blank">View on
+                        GitHub <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1048,104 +1272,202 @@
                         improving load handling by 40%.</li>
                     <li>Deployed multi-service applications on GCP using Compute Engine, Cloud Run, Cloud Storage, and
                         VPC, reducing deployment time by 50%.</li>
-                        <li>Configured IP management, routing, and firewall rules, improving network security and access
-                            control by 35%.</li>
-                        <li>Implemented NAS backup solutions for laptops and local servers, increasing data reliability by
-                            60%.</li>
-                        <li>Automated SharePoint user cleanup workflows, reducing manual effort by 70% and keeping user
-                            lists 100% up-to-date.</li>
-                        </ul>
-                        </div>
-                        </div>
-                        </section>
-                        <section id="skills">
-                            <div class="container">
-                                <h2>Skills</h2>
-                                <div class="skills-grid">
-                                    <div class="skill-card aws"><i class="fab fa-aws"></i>
-                                        <p>AWS</p>
-                                    </div>
-                                    <div class="skill-card docker"><i class="fab fa-docker"></i>
-                                        <p>Docker</p>
-                                    </div>
-                                    <div class="skill-card kubernetes"><i class="fas fa-dharmachakra"></i>
-                                        <p>Kubernetes</p>
-                                    </div>
-                                    <div class="skill-card terraform"><i class="fas fa-code-branch"></i>
-                                        <p>Terraform</p>
-                                    </div>
-                                    <div class="skill-card prometheus"><i class="fas fa-chart-line"></i>
-                                        <p>Prometheus</p>
-                                    </div>
-                                    <div class="skill-card grafana"><i class="fas fa-chart-area"></i>
-                                        <p>Grafana</p>
-                                    </div>
-                                    <div class="skill-card linux"><i class="fab fa-linux"></i>
-                                        <p>Linux</p>
-                                    </div>
-                                    <div class="skill-card github"><i class="fab fa-github"></i>
-                                        <p>GitHub Actions</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <footer id="footer">
-                            <div class="footer-content">
-                                <h2>Let's Connect ⛈️</h2>
-                                <p class="footer-subtitle">Reach out through any of these platforms!</p>
-                        
-                                <div class="contact-buttons">
-                                    <a href="mailto:litheeshkumar93@gmail.com" class="contact-btn email">
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                    <a href="https://linkedin.com/in/litheeshkumar-g-ab076824b" target="_blank" class="contact-btn linkedin">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                    <a href="https://github.com/litheesh45" target="_blank" class="contact-btn github">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                        
-                                <div class="music-section">
-                                    <h3><i class="fas fa-headphones"></i> Coded with Music & Coffee</h3>
-                                    <p class="music-note">Built with passion, powered by cloud automation ☁️</p>
-                                </div>
-                        
-                                <p class="footer-text">© 2025 Litheeshkumar G — Automating the world, one pipeline at a time 🚀</p>
-                            </div>
-                        </footer>
-                        
-                        <script>
-                            // Scroll reveal observer
-                            const observer = new IntersectionObserver((entries) => {
-                                entries.forEach(entry => {
-                                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                                });
-                            }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+                    <li>Configured IP management, routing, and firewall rules, improving network security and access
+                        control by 35%.</li>
+                    <li>Implemented NAS backup solutions for laptops and local servers, increasing data reliability by
+                        60%.</li>
+                    <li>Automated SharePoint user cleanup workflows, reducing manual effort by 70% and keeping user
+                        lists 100% up-to-date.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card aws"><i class="fab fa-aws"></i>
+                    <p>AWS</p>
+                </div>
+                <div class="skill-card docker"><i class="fab fa-docker"></i>
+                    <p>Docker</p>
+                </div>
+                <div class="skill-card kubernetes"><i class="fas fa-dharmachakra"></i>
+                    <p>Kubernetes</p>
+                </div>
+                <div class="skill-card terraform"><i class="fas fa-code-branch"></i>
+                    <p>Terraform</p>
+                </div>
+                <div class="skill-card prometheus"><i class="fas fa-chart-line"></i>
+                    <p>Prometheus</p>
+                </div>
+                <div class="skill-card grafana"><i class="fas fa-chart-area"></i>
+                    <p>Grafana</p>
+                </div>
+                <div class="skill-card linux"><i class="fab fa-linux"></i>
+                    <p>Linux</p>
+                </div>
+                <div class="skill-card github"><i class="fab fa-github"></i>
+                    <p>GitHub Actions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="footer-content">
+            <h2>Let's Connect ⛈️</h2>
+            <p class="footer-subtitle">Reach out through any of these platforms!</p>
 
-                            document.querySelectorAll('section').forEach(section => {
-                                if (!section.classList.contains('visible')) observer.observe(section);
-                            });
+            <div class="contact-buttons">
+                <a href="mailto:litheeshkumar93@gmail.com" class="contact-btn email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/litheeshkumar-g-ab076824b" target="_blank"
+                    class="contact-btn linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/litheesh45" target="_blank" class="contact-btn github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
 
-                            // Smooth scrolling
-                            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                                anchor.addEventListener('click', function (e) {
-                                    e.preventDefault();
-                                    const target = document.querySelector(this.getAttribute('href'));
-                                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                });
-                            });
+            <div class="music-section">
+                <h3><i class="fas fa-headphones"></i> Coded with Music & Coffee</h3>
+                <p class="music-note">Built with passion, powered by cloud automation ☁️</p>
+            </div>
 
-                            // Laptop click to show tools
-                            document.getElementById('laptopClick').addEventListener('click', () => {
-                                document.getElementById('toolsPopup').classList.add('active');
-                            });
+            <p class="footer-text">© 2025 Litheeshkumar G — Automating the world, one pipeline at a time 🚀</p>
+        </div>
+    </footer>
 
-                            // Close popup
-                            document.getElementById('closePopup').addEventListener('click', () => {
-                                document.getElementById('toolsPopup').classList.remove('active');
-                            });
+    <script>
+        // Scroll reveal observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
 
-                            // Close popup on background click
-                            document.getElementById('toolsPopup').addEventListener('click', (e) => {
-                                if (e.target === document.getElementById('tool'))})
+        document.querySelectorAll('section').forEach(section => {
+            if (!section.classList.contains('visible')) observer.observe(section);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Laptop click to scroll to skills
+        document.getElementById('laptopClick').addEventListener('click', () => {
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) {
+                skillsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+        // Close popup
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('toolsPopup').classList.remove('active');
+        });
+
+        // Close popup on background click
+        document.getElementById('toolsPopup').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('toolsPopup')) {
+                document.getElementById('toolsPopup').classList.remove('active');
+            }
+        });
+
+        // Typing Effect
+        const text = "I automate the boring parts so your systems run smarter, not harder.";
+        const subtitle = document.querySelector('.typing-subtitle'); // Assuming this element exists in your HTML
+        if (subtitle) { // Check if subtitle element exists before proceeding
+            subtitle.innerHTML = ''; // Clear initial text
+
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    // Check for "boring parts"
+                    if (text.substring(i).startsWith("boring parts")) {
+                        const span = document.createElement('span');
+                        span.className = 'highlight';
+                        span.textContent = "boring parts";
+                        subtitle.appendChild(span);
+                        i += "boring parts".length;
+                    }
+                    // Check for "smarter"
+                    else if (text.substring(i).startsWith("smarter")) {
+                        const span = document.createElement('span');
+                        span.className = 'highlight';
+                        span.textContent = "smarter";
+                        subtitle.appendChild(span);
+                        i += "smarter".length;
+                    }
+                    // Type single character
+                    else {
+                        subtitle.innerHTML += text.charAt(i);
+                        i++;
+                    }
+                    setTimeout(typeWriter, 50);
+                }
+            }
+
+            // Start typing after a slight delay
+            setTimeout(typeWriter, 1000);
+
+            // Cursor Trail
+            const cursorDot = document.createElement('div');
+            const cursorOutline = document.createElement('div');
+            cursorDot.className = 'cursor-dot';
+            cursorOutline.className = 'cursor-dot-outline';
+            document.body.appendChild(cursorDot);
+            document.body.appendChild(cursorOutline);
+
+            window.addEventListener('mousemove', (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
+
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+
+                // Slight delay for outline
+                cursorOutline.animate({
+                    left: `${posX}px`,
+                    top: `${posY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
+
+            // Theme Toggle Logic
+            const themeToggle = document.getElementById('themeToggle');
+            const icon = themeToggle.querySelector('i');
+            const body = document.body;
+
+            // Check local storage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                if (body.getAttribute('data-theme') === 'dark') {
+                    body.removeAttribute('data-theme');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.setAttribute('data-theme', 'dark');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
