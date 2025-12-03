@@ -445,31 +445,7 @@
             }
         }
 
-        /* Cursor Trail */
-        .cursor-dot,
-        .cursor-dot-outline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
 
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-primary);
-        }
-
-        .cursor-dot-outline {
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--accent-primary);
-            opacity: 0.5;
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-        }
 
         .tools-popup {
             position: fixed;
@@ -1068,17 +1044,37 @@
 
             .laptop-container {
                 width: 100%;
-                height: 220px;
-                margin-bottom: 30px;
+                height: 180px;
+                /* Reduced height for mobile */
+                margin-bottom: 20px;
+                perspective: 800px;
+                /* Adjusted perspective */
             }
 
             .laptop-screen {
-                width: 260px;
-                height: 170px;
+                width: 240px;
+                /* Smaller screen width */
+                height: 150px;
+                /* Smaller screen height */
+                bottom: 10px;
             }
 
             .laptop-base {
-                width: 300px;
+                width: 280px;
+                /* Smaller base width */
+                height: 10px;
+            }
+
+            .laptop-base::before {
+                width: 80px;
+                height: 6px;
+                top: -6px;
+            }
+
+            /* Adjust screen content font size for mobile */
+            .screen-content {
+                font-size: 8px;
+                padding: 10px;
             }
 
             .tools-grid {
@@ -1418,27 +1414,7 @@
             // Start typing after a slight delay
             setTimeout(typeWriter, 1000);
 
-            // Cursor Trail
-            const cursorDot = document.createElement('div');
-            const cursorOutline = document.createElement('div');
-            cursorDot.className = 'cursor-dot';
-            cursorOutline.className = 'cursor-dot-outline';
-            document.body.appendChild(cursorDot);
-            document.body.appendChild(cursorOutline);
 
-            window.addEventListener('mousemove', (e) => {
-                const posX = e.clientX;
-                const posY = e.clientY;
-
-                cursorDot.style.left = `${posX}px`;
-                cursorDot.style.top = `${posY}px`;
-
-                // Slight delay for outline
-                cursorOutline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: "forwards" });
-            });
 
             // Theme Toggle Logic
             const themeToggle = document.getElementById('themeToggle');
